@@ -121,12 +121,12 @@ export default function ROICalculator() {
                         <LineChart data={chartData} margin={{ top: 5, right: 10, left: 10, bottom: 0 }}>
                             <CartesianGrid strokeDasharray="3 3" stroke="#064e3b" strokeOpacity={0.4} vertical={false} />
                             <XAxis dataKey="year" stroke="#059669" fontSize={12} tickLine={false} axisLine={false} dy={10} fontFamily="monospace" />
-                            <YAxis stroke="#059669" fontSize={11} tickLine={false} axisLine={false} tickFormatter={(val) => `${(val / 1000000).toFixed(1)}M`} fontFamily="monospace" />
+                            <YAxis stroke="#059669" fontSize={11} tickLine={false} axisLine={false} tickFormatter={(val: any) => `${(Number(val) / 1000000).toFixed(1)}M`} fontFamily="monospace" />
                             <Tooltip
                                 contentStyle={{ backgroundColor: '#020f08', borderColor: '#10b981', borderRadius: '8px', borderWidth: '1px' }}
                                 itemStyle={{ fontSize: '13px', fontFamily: 'monospace' }}
                                 labelStyle={{ color: '#34d399', fontSize: '12px', fontWeight: 'bold' }}
-                                formatter={(value: number) => `SAR ${(value / 1000000).toFixed(2)}M`}
+                                formatter={(value: any) => `SAR ${(Number(value) / 1000000).toFixed(2)}M`}
                             />
                             {/* Manual Line in subtle red */}
                             <Line type="monotone" dataKey="Manual Schedule" stroke="#ef4444" strokeWidth={2} strokeDasharray="4 4" dot={{ r: 4, fill: '#ef4444' }} activeDot={{ r: 6 }} />
